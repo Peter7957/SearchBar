@@ -1,0 +1,145 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.square {
+  background: none;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #ccc; /* Añade un borde para que sea más visible */
+  box-sizing: border-box; /* Asegúrate de que el borde se incluya en la altura y el ancho */
+  font-size: 16px; /* Ajusta el tamaño de la fuente para centrar el texto en el botón */
+  overflow: hidden;
+
+}
+
+.board-row {
+  max-height: 40px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+ul,
+ol{
+  list-style: none;
+}
+
+body{
+  background-color: var(--bg);
+  font-family: sans-serif;
+  -webkit-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+}
+
+h1,
+h2 {
+  height: 18px;
+}
+
+.wrapper {
+  width: 96%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.card-grid {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 48px;
+}
+
+.card {
+  background-color: var(--bg-offset);
+  padding: 0px;
+  box-shadow: 0px 2px 4px var(--border);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    transform: scale(1.1);
+    .card-content {
+      h2 {
+        display: block;
+        -webkit-line-clamp: none;
+        -webkit-box-orient: none;
+        overflow: visible;
+      }
+    } 
+  }
+}
+
+.card-iamage {
+  max-height: 150px;
+
+  img {
+    min-height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.card-content {
+  padding: 32px 15px;
+
+  h2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.card-list {
+  margin-top: 16px;
+
+  li {
+    color: var(--text);
+    margin-top: 8px;
+
+    span {
+      color: var(--gray);
+    }
+  }
+}
+/*
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+*/
